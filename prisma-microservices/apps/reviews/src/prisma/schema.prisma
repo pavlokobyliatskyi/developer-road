@@ -1,0 +1,15 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("REVIEWS_DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+  output   = env("REVIEWS_API_PRISMA_CLIENT_OUTPUT")
+}
+
+model Review {
+  id     Int    @id @default(autoincrement())
+  userId Int
+  text   String
+}

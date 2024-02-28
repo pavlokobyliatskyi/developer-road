@@ -1,0 +1,24 @@
+{
+  "name": "reviews",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/reviews/src",
+  "projectType": "application",
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "reviews:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "reviews:build:development"
+        },
+        "production": {
+          "buildTarget": "reviews:build:production"
+        }
+      }
+    }
+  },
+  "tags": []
+}
